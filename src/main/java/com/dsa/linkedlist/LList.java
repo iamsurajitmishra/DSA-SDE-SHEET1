@@ -8,7 +8,7 @@ public class LList {
        this.head = head;
    }
     public void printList(LNode head){
-        LNode tmp = head;
+        LNode tmp = getHead();
         while (tmp != null){
             System.out.print( tmp.data +"-> ");
             tmp = tmp.next;
@@ -21,6 +21,9 @@ public class LList {
        return this.head;
     }
 
+    public void setHead(LNode head){
+       this.head = head;
+    }
 
     // Add node at the end of the linked list
     public void push(int data){
