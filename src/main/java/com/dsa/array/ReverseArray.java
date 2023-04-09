@@ -1,44 +1,32 @@
 package com.dsa.array;
 
-/*
-
-Problem : Reverse Array
-
-
- */
-
-
 import java.util.Arrays;
 
 public class ReverseArray {
 
 
-    public static void main(String[] args) {
-
-        int[] arr = new int[]{10,50,30,60,40};
-        reverse(arr);
-
-        System.out.println(Arrays.toString(arr));
-
-    }
-
     /*
-      # Two Pointer approach -
-
+        Time complexity : O(N)
      */
-    public static void reverse(int[] arr){
-        int l = 0, r = arr.length - 1 ;
-        while(l<=r){
-
-            int tmp = arr[l];
-            arr[l] = arr[r];
-            arr[r] = tmp;
-
-            l++; r--;
+    public static void reverseArray(int[] arr){
+        int len = arr.length;
+        for (int i = 0,j = len-1 ; i<=len-1 && j>=0;i++,j--){
+            swap(arr,i,j);
         }
     }
 
+    public static void swap(int[] arr, int l,int r){
+            int t = arr[l];
+            arr[l] = arr[r];
+            arr[r] = t;
+    }
 
 
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4};
+        swap(arr, 0, 3);
+        reverseArray(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 
 }
